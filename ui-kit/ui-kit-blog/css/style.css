@@ -658,7 +658,7 @@ section * {
   z-index: 999;
 }
 /**
- * Blog 1 stylesheet  
+ * Blog 1 stylesheet
  * */
 .blog-1 {
   padding-bottom: 130px;
@@ -957,7 +957,7 @@ section * {
   }
 }
 /**
- * Blog 2 stylesheet  
+ * Blog 2 stylesheet
  * */
 .blog-2 {
   padding-top: 200px;
@@ -1061,7 +1061,7 @@ section * {
   }
 }
 /**
- * Blog 3 stylesheet  
+ * Blog 3 stylesheet
  * */
 .blog-3 {
   padding-top: 130px;
@@ -1104,7 +1104,7 @@ section * {
 .blog-3 .img {
   height: 380px;
   margin-bottom: 110px;
-  background: url('../../../common-files/img/blog/background.jpg') 50% 20% no-repeat;
+  background: url('../../../common-files/img/blog/background.jpg') 50% 0% no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1177,7 +1177,7 @@ section * {
   color: #15967d;
 }
 /**
- * Blog 4 stylesheet  
+ * Blog 4 stylesheet
  * */
 .blog-4 {
   padding-top: 130px;
@@ -1321,7 +1321,7 @@ section * {
   }
 }
 /**
- * Blog 5 stylesheet  
+ * Blog 5 stylesheet
  * */
 .blog-5 {
   padding-top: 130px;
