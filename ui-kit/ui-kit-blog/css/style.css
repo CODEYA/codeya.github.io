@@ -1070,9 +1070,6 @@ section * {
 .blog-3 p {
   margin: 0;
 }
-.blog-3 p + p {
-  margin-top: 30px;
-}
 .blog-3 h6 {
   font-size: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1081,7 +1078,7 @@ section * {
   text-transform: none;
 }
 .blog-3 .title {
-  margin-bottom: 84px;
+  margin-bottom: 44px;
   text-align: center;
 }
 .blog-3 .title h3 {
@@ -1106,8 +1103,8 @@ section * {
 }
 .blog-3 .img {
   height: 380px;
-  margin: 110px 0;
-  background: url('../../../common-files/img/Brazil_002.jpg') 50% 80% no-repeat;
+  margin-bottom: 110px;
+  background: url('../../../common-files/img/blog/background.jpg') 50% 20% no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1128,24 +1125,19 @@ section * {
 }
 .blog-3 .quote {
   position: relative;
-  margin-bottom: 35px;
-  font-size: 37px;
   line-height: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #2c3e50;
   letter-spacing: -1px;
-  font-weight: 300;
 }
 .blog-3 .quote:before {
-  content: url('../../../common-files/icons/quote-up.png');
+  content: '●';
   position: absolute;
-  top: -17px;
   left: -40px;
 }
 @media (max-width: 767px) {
   .blog-3 .quote {
     margin-left: 40px;
-    font-size: 29px;
+    font-size: 19px;
     line-height: 38px;
   }
 }
