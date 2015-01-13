@@ -1,22 +1,147 @@
 <!--DOCTYPE html -->
 <html lang="ja">
 <head>
-  <!-- Startup framework -->
+  <meta charset="UTF-8">
+  <!-- STARTUP FRAMEWORK -->
     <link rel="stylesheet" href="./flat-ui/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./flat-ui/css/flat-ui.css">
     <link rel="stylesheet" href="./common-files/css/icon-font.css">
     <link rel="stylesheet" href="./common-files/css/animations.css">
-    <link rel="stylesheet" href="./ui-kit/ui-kit-header/css/style.css">
-    <link rel="stylesheet" href="./ui-kit/ui-kit-content/css/style.css">
-    <link rel="stylesheet" href="./ui-kit/ui-kit-blog/css/style.css">
-    <link rel="stylesheet" href="./ui-kit/ui-kit-contacts/css/style.css">
-    <link rel="stylesheet" href="./ui-kit/ui-kit-footer/css/style.css">
+    <link rel="stylesheet" href="./ui-kit/header.css">
+    <link rel="stylesheet" href="./ui-kit/content.css">
+    <link rel="stylesheet" href="./ui-kit/blog.css">
+    <link rel="stylesheet" href="./ui-kit/contacts.css">
+    <link rel="stylesheet" href="./ui-kit/footer.css">
+  <!-- /STARTUP FRAMEWORK -->
 </head>
 <body>
   <div class="page-wrapper">
+    <!-- HEADER NAVIGATION -->
+      <header class="header-1">
+        <div class="container">
+          <div class="row">
+            <nav class="navbar col-sm-12" role="navigation">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle"></button>
+                <a class="brand" href="#"></a>
+              </div>
+              <div class="collapse navbar-collapse">
+                <ul class="nav pull-right">
+                  <li><a href="#">HOME</a>
+                  </li>
+                  <li><a href="#SERVICES">SERVICES</a>
+                  </li>
+                  <li><a href="#TECHNICALDOCUMENTS">TECHNICAL DOCUMENTS</a>
+                  </li>
+                  <li><a href="#CONTACT">CONTACT</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    <!-- /HEADER NAVIGATION -->
+    <!-- HEADER -->
+      <section class="header-1-sub">
+        <div id="pt-main" class="page-transitions pt-perspective pt-item-1 pt-first">
+          <div class="pt-page pt-page-1 pt-page-current">
+            <div class="background">&nbsp;</div>
+            <div class="caption">
+              <div class="container">
+                <h3>CODE であなたのビジネスを支えます。</h3>
+                <p class="lead">CODEYA ではシステム構築のお手伝いを致します。システム構築でお困りのことがございましたらお声がけください。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /HEADER -->
+    <!-- SERVICES -->
+      <section class="content-26 bg-white">
+        <div class="container">
+          <a name="SERVICES"></a>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <h3>SERVICES</h3>
+            </div>
+          </div>
+          <div class="row features">
+            <div class="col-sm-3">
+              <img src="./common-files/img/services/web@2x.png" alt="" width="100" height="100">
+              <h6>Web development</h6>
+              HTML(HTML5) / JavaScript(TypeScript) / CSS(SASS,SCSS,LESS) による画面開発
+            </div>
+            <div class="col-sm-4 col-sm-offset-1">
+              <img src="./common-files/img/services/server@2x.png" alt="" width="100" height="100">
+              <h6>Server development</h6>
+              Java / Scala によるサーバ開発
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+              <img src="./common-files/img/services/architecture@2x.png" alt="" width="78" height="100">
+              <h6>Architecture consulting</h6>
+              システムアーキテクチャー設計
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /SERVICES -->
+    <!-- TECHNICAL DOCUMENTS -->
+      <section class="blog-3">
+        <div class="img"></div>
+        <div class="container">
+          <a name="TECHNICALDOCUMENTS"></a>
+          <div class="title">
+            <h3>TECHNICAL DOCUMENTS</h3>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <p>弊社にて作成している社内技術文章を以下に公開します。主に Web 関連技術、開発環境などに関するものとなります。</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              [準備中]
+              <!--
+              <p class="quote">サンプル1</p>
+              <p class="quote">サンプル2</p>
+              -->
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /TECHNICAL DOCUMENTS -->
+    <!-- CONTACT -->
+      <section class="contacts-4">
+        <div class="container">
+          <a name="CONTACT"></a>
+          <div class="content">
+            <h3>CONTACT</h3>
+            <p>お問い合わせは以下のメールアドレスまでお願い致します。</p>
+            <div class="links">
+              <a href="mailto:info@codeya.co.jp">info@codeya.co.jp</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- /CONTACT -->
+    <!-- FOOTER -->
+      <footer class="footer-7 ">
+        <div class="container">
+          <nav>
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#SERVICES">SERVICES</a></li>
+              <li class="scroll-btn"><a href="#" class="scroll-top fui-arrow-up"></a></li>
+              <li><a href="#TECHNICALDOCUMENTS">TECHNICAL DOCUMENTS</a></li>
+              <li><a href="#CONTACT">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    <!-- /FOOTER -->
   </div>
-
-  <!-- Startup framework -->
+  <!-- STARTUP FRAMEWORK -->
     <script src="./common-files/js/jquery-1.10.2.min.js"></script>
     <script src="./flat-ui/js/bootstrap.min.js"></script>
     <script src="./common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
@@ -27,5 +152,6 @@
     <script src="./common-files/js/jquery.svganim.js"></script>
     <script src="./common-files/js/jquery.parallax.min.js"></script>
     <script src="./common-files/js/startup-kit.js"></script>
+  <!-- /STARTUP FRAMEWORK -->
 </body>
 </html>
