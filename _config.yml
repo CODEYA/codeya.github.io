@@ -1,0 +1,11 @@
+# Handling Reading
+encoding:     "utf-8"
+markdown_ext: "md"
+
+# Conversion
+markdown:    kramdown
+highlighter: pygments
+
+# Markdown Processors
+kramdown:
+  input: GFM
