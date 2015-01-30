@@ -3,9 +3,20 @@ encoding:     "utf-8"
 markdown_ext: "md"
 
 # Conversion
-markdown:    kramdown
+markdown:    redcarpet
 highlighter: pygments
 
+# Outputting
+defaults:
+  -
+    scope:
+      path: "documents"
+      type: "pages"
+    values:
+      layout: "documents"
+      author: "CODEYA"
+      category: "documents"
+
 # Markdown Processors
-kramdown:
-  input: GFM
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough"]

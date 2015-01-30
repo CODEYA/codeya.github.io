@@ -1,0 +1,114 @@
+<!--DOCTYPE html -->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <!-- STARTUP FRAMEWORK -->
+  <link rel="stylesheet" href="../flat-ui/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../flat-ui/css/flat-ui.css">
+  <link rel="stylesheet" href="../common-files/css/icon-font.css">
+  <link rel="stylesheet" href="../common-files/css/animations.css">
+  <link rel="stylesheet" href="../ui-kit/header.css">
+  <link rel="stylesheet" href="../ui-kit/content.css">
+  <link rel="stylesheet" href="../ui-kit/blog.css">
+  <link rel="stylesheet" href="../ui-kit/contacts.css">
+  <link rel="stylesheet" href="../ui-kit/footer.css">
+  <!-- /STARTUP FRAMEWORK -->
+  <!-- PYGMENTS -->
+  <link rel="stylesheet" href="../common-files/css/syntax.css">
+  <!-- /PYGMENTS -->
+  <!-- TOC -->
+  <link rel="stylesheet" href="../common-files/css/toc.css">
+  <!-- /TOC -->
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER NAVIGATION -->
+    <header class="header-1">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar col-sm-12" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle"></button>
+              <a class="brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav pull-right">
+                <li><a href="/#">HOME</a>
+                </li>
+                <li><a href="/#SERVICES">SERVICES</a>
+                </li>
+                <li><a href="/#TECHNICALDOCUMENTS">TECHNICAL DOCUMENTS</a>
+                </li>
+                <li><a href="/#CONTACT">CONTACT</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- /HEADER NAVIGATION -->
+    <!-- HEADER -->
+    <section class="header-1-sub header-1-sub-low">
+      <div id="pt-main" class="page-transitions pt-perspective pt-item-1 pt-first">
+        <div class="pt-page pt-page-1 pt-page-current">
+          <div class="background">&nbsp;</div>
+        </div>
+      </div>
+    </section>
+    <!-- /HEADER -->
+    <!-- CONTENT -->
+    <section class="blog-3 blog-3-low">
+      <div id="TOC"></div>
+      <div class="container">
+        <div class="title">
+          <h3>{{ page.title }}</h3>
+        </div>
+        {{ content }}
+      </div>
+    </section>
+    <!-- /CONTENT -->
+  </div>
+  <!-- FOOTER -->
+  <footer class="footer-7 ">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="/#">HOME</a></li>
+          <li><a href="/#SERVICES">SERVICES</a></li>
+          <li class="scroll-btn"><a href="/#" class="scroll-top fui-arrow-up"></a></li>
+          <li><a href="/#TECHNICALDOCUMENTS">TECHNICAL DOCUMENTS</a></li>
+          <li><a href="/#CONTACT">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+</div>
+<!-- STARTUP FRAMEWORK -->
+<script src="../common-files/js/jquery-1.10.2.min.js"></script>
+<script src="../flat-ui/js/bootstrap.min.js"></script>
+<script src="../common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script src="../common-files/js/modernizr.custom.js"></script>
+<script src="../common-files/js/page-transitions.js"></script>
+<script src="../common-files/js/easing.min.js"></script>
+<script src="../common-files/js/jquery.svg.js"></script>
+<script src="../common-files/js/jquery.svganim.js"></script>
+<script src="../common-files/js/jquery.parallax.min.js"></script>
+<script src="../common-files/js/startup-kit.js"></script>
+<!-- /STARTUP FRAMEWORK -->
+<!-- TOC -->
+<script src="../common-files/js/toc.min.js"></script>
+<script>
+  $(window).load(function(){
+    $("#TOC").toc({
+      'selectors': 'h4,h5',
+      'container': '.blog-3',
+      'smoothScrolling': true
+    });
+  });
+</script>
+<!-- /TOC -->
+</body>
+</html>
