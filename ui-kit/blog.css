@@ -664,6 +664,10 @@ section * {
   padding-top: 130px;
   padding-bottom: 130px;
 }
+.blog-3-low {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 .blog-3 p {
   margin: 0;
 }
@@ -772,4 +776,62 @@ section * {
 .blog-3 .links a:focus,
 .blog-3 .links a.active {
   color: #15967d;
+}
+
+.blog-3 table {
+  width: auto;
+  border-spacing: 0;
+  font-size:14px;
+}
+.blog-3 table th {
+  color: #fff;
+  padding: 8px 15px;
+  background: #258;
+  background:-moz-linear-gradient(rgba(136,34,85,0.7), rgba(136,34,85,0.9) 50%);
+  background:-webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(136,34,85,0.7)), to(rgba(136,34,85,0.9)));
+  font-weight: bold;
+  border-left:1px solid #825;
+  border-top:1px solid #825;
+  border-bottom:1px solid #825;
+  line-height: 120%;
+  text-align: center;
+  text-shadow:0 -1px 0 rgba(136,34,85,0.9);
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+}
+.blog-3 table th:first-child {
+  border-radius: 5px 0 0 0;
+}
+.blog-3 table th:last-child {
+  border-radius:0 5px 0 0;
+  border-right:1px solid #825;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
+}
+.blog-3 table tr td {
+  padding: 8px 15px;
+  border-bottom: 1px solid #e084b2;
+  border-left: 1px solid #e084b2;
+  text-align: center;
+}
+.blog-3 table tr td:last-child {
+  border-right: 1px solid #e084b2;
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+}
+.blog-3 table tr {
+  background: #fff;
+}
+.blog-3 table tr:nth-child(2n+1) {
+  background: #fcf1f6;
+}
+.blog-3 table tr:last-child td {
+  box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+}
+.blog-3 table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+.blog-3 table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+.blog-3 table tr:hover {
+  background: #eebbd4;
+  cursor:pointer;
 }
