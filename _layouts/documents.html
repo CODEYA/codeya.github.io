@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="../common-files/css/animations.css">
   <link rel="stylesheet" href="../ui-kit/header.css">
   <link rel="stylesheet" href="../ui-kit/content.css">
-  <link rel="stylesheet" href="../ui-kit/blog.css">
   <link rel="stylesheet" href="../ui-kit/contacts.css">
   <link rel="stylesheet" href="../ui-kit/footer.css">
+  <link rel="stylesheet" href="../ui-kit/documents.css">
   <!-- /STARTUP FRAMEWORK -->
   <!-- PYGMENTS -->
   <link rel="stylesheet" href="../common-files/css/syntax.css">
@@ -59,13 +59,13 @@
     </section>
     <!-- /HEADER -->
     <!-- CONTENT -->
-    <section class="blog-3 blog-3-low">
+    <section class="documents">
       <div id="TOC"></div>
       <div class="container">
-        <div class="title">
-          <h3>{{ page.title }}</h3>
-        </div>
-        {{ content }}
+        <div class="title">{{ page.title }}</div>
+        <div class="content">
+          {{ content }}
+      </div>
       </div>
     </section>
     <!-- /CONTENT -->
@@ -103,8 +103,8 @@
 <script>
   $(window).load(function(){
     $("#TOC").toc({
-      'selectors': 'h4,h5',
-      'container': '.blog-3',
+      'selectors': 'h1,h2',
+      'container': '.documents > .container > .content',
       'smoothScrolling': true
     });
   });
