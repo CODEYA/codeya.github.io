@@ -30,15 +30,15 @@ a:hover {
 }
 h1,
 .h1 {
-  font-size: 48px /* 64px */;
+  font-size: 42px /* 52px */;
 }
 h2,
 .h2 {
-  font-size: 41px /* 52px */;
+  font-size: 32px /* 42px */;
 }
 h3,
 .h3 {
-  font-size: 32px /* 40px */;
+  font-size: 22px /* 32px */;
 }
 h4,
 .h4 {
@@ -74,12 +74,10 @@ h2 {
   margin-bottom: 2px;
 }
 h3 {
-  font-weight: 700;
   margin-bottom: 4px;
-  margin-top: 2px;
+  margin-top: 10px;
 }
 h4 {
-  font-weight: 500;
   margin-top: 4px;
 }
 h5 {
@@ -519,12 +517,6 @@ h6,
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #2c3e50;
 }
-h1 {
-  font-weight: normal;
-}
-h3 {
-  font-weight: normal;
-}
 img {
   -webkit-backface-visibility: hidden;
 }
@@ -660,45 +652,29 @@ section * {
 /**
  * Blog 3 stylesheet
  * */
-.blog-3 {
-  padding-top: 130px;
-  padding-bottom: 130px;
+.documents {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
-.blog-3 p {
+.documents p {
   margin: 0;
 }
-.blog-3 h6 {
+.documents h6 {
   font-size: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   margin: 0 0 25px;
   text-transform: none;
 }
-.blog-3 .title {
+.documents .title {
   margin-bottom: 44px;
   text-align: center;
-}
-.blog-3 .title h3 {
   font-size: 35px;
   margin: 0;
   font-weight: 300;
   letter-spacing: -1px;
 }
-.blog-3 .title .submitted {
-  font-size: 16px;
-  color: #bdc3c7;
-  margin-top: 15px;
-}
-.blog-3 .title img {
-  display: block;
-  margin: 0 auto 37px;
-  -webkit-transform: rotate(-30deg);
-  -moz-transform: rotate(-30deg);
-  -ms-transform: rotate(-30deg);
-  -o-transform: rotate(-30deg);
-  transform: rotate(-30deg);
-}
-.blog-3 .img {
+.documents .img {
   height: 380px;
   margin-bottom: 110px;
   background: url('../common-files/img/blog/background.jpg') 50% 0% no-repeat;
@@ -708,44 +684,44 @@ section * {
   background-size: cover;
 }
 @media (max-width: 1200px) and (min-width: 768px) {
-  .blog-3 .img {
+  .documents .img {
     background-position-y: 100%;
   }
 }
 @media (max-width: 767px) {
-  .blog-3 .img {
+  .documents .img {
     margin-right: -20px;
     margin-left: -20px;
     padding-right: 20px;
     padding-left: 20px;
   }
 }
-.blog-3 .quote {
+.documents .quote {
   position: relative;
   line-height: 50px;
   color: #2c3e50;
   letter-spacing: -1px;
 }
-.blog-3 .quote:before {
+.documents .quote:before {
   content: '●';
   position: absolute;
   left: -40px;
 }
 @media (max-width: 767px) {
-  .blog-3 .quote {
+  .documents .quote {
     margin-left: 40px;
     font-size: 19px;
     line-height: 38px;
   }
 }
-.blog-3 .promo {
+.documents .promo {
   margin-bottom: 70px;
 }
-.blog-3 .links {
+.documents .links {
   margin-top: 76px;
 }
-.blog-3 .links,
-.blog-3 .links * {
+.documents .links,
+.documents .links * {
   font-size: 13px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
@@ -753,13 +729,13 @@ section * {
   letter-spacing: 0.2em;
   color: #bdc3c7;
 }
-.blog-3 .links h6 {
+.documents .links h6 {
   margin: 0 0 23px;
   letter-spacing: 0.19em;
   font-size: 12px;
   font-weight: 500;
 }
-.blog-3 .links a {
+.documents .links a {
   color: #1abc9c;
   font-size: 20px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -768,18 +744,18 @@ section * {
   letter-spacing: normal;
   line-height: 1.5;
 }
-.blog-3 .links a:hover,
-.blog-3 .links a:focus,
-.blog-3 .links a.active {
+.documents .links a:hover,
+.documents .links a:focus,
+.documents .links a.active {
   color: #15967d;
 }
 
-.blog-3 table {
+.documents table {
   width: auto;
   border-spacing: 0;
   font-size:14px;
 }
-.blog-3 table th {
+.documents table th {
   color: #fff;
   padding: 8px 15px;
   background: #258;
@@ -794,40 +770,52 @@ section * {
   text-shadow:0 -1px 0 rgba(136,34,85,0.9);
   box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
 }
-.blog-3 table th:first-child {
+.documents table th:first-child {
   border-radius: 5px 0 0 0;
 }
-.blog-3 table th:last-child {
+.documents table th:last-child {
   border-radius:0 5px 0 0;
   border-right:1px solid #825;
   box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
 }
-.blog-3 table tr td {
+.documents table tr td {
   padding: 8px 15px;
   border-bottom: 1px solid #e084b2;
   border-left: 1px solid #e084b2;
   text-align: center;
 }
-.blog-3 table tr td:last-child {
+.documents table tr td:last-child {
   border-right: 1px solid #e084b2;
   box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
 }
-.blog-3 table tr {
+.documents table tr {
   background: #fff;
 }
-.blog-3 table tr:nth-child(2n+1) {
+.documents table tr:nth-child(2n+1) {
   background: #fcf1f6;
 }
-.blog-3 table tr:last-child td {
+.documents table tr:last-child td {
   box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
 }
-.blog-3 table tr:last-child td:first-child {
+.documents table tr:last-child td:first-child {
   border-radius: 0 0 0 5px;
 }
-.blog-3 table tr:last-child td:last-child {
+.documents table tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
-.blog-3 table tr:hover {
+.documents table tr:hover {
   background: #eebbd4;
   cursor:pointer;
+}
+.documents img {
+  display: block;
+  margin: 15px auto;
+  left: 0;
+  right: 0;
+}
+.documents p {
+  font-size: 14px;
+}
+.documents hr {
+  margin: 50px 0;
 }

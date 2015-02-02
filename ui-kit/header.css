@@ -906,9 +906,15 @@ section * {
   color: white;
   background-color: #222527;
 }
+.header-1-sub-low {
+  height: 200px;
+}
 @media (max-width: 480px) {
   .header-1-sub {
     height: 420px;
+  }
+  .header-1-sub-low {
+    height: 150px;
   }
 }
 .header-1-sub .container {
