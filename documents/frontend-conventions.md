@@ -100,7 +100,9 @@ Lower Only Name = 【regexp】 [a-z]{1}[a-z0-9]*
   <link /><!-- CSS 読み込み -->
 </head>
 <body>
-  <section /><!-- レイアウト -->
+  <article>
+    <section /><!-- レイアウト -->
+  </article>
   <script /><!-- JavaScript 読み込み -->
 </body>
 </html>
@@ -117,7 +119,9 @@ Lower Only Name = 【regexp】 [a-z]{1}[a-z0-9]*
   <link /><!-- CSS 読み込み -->
 </head>
 <body>
-  <section /><!-- レイアウト -->
+  <article>
+    <section /><!-- レイアウト -->
+  </article>
   <script /><!-- JavaScript 読み込み -->
 </body>
 </html>
@@ -134,7 +138,8 @@ html(lang="ja")
     meta(charset="UTF-8")
     link //- CSS 読み込み
   body
-    section //- レイアウト
+    article
+      section //- レイアウト
     script //- JavaScript 読み込み
 {% endhighlight %}</figure>
 
