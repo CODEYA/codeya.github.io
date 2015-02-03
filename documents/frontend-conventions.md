@@ -420,14 +420,6 @@ State Name = "is-", Lower Only Name
 
 TBD:
 
-### SCSS mixin 名
-
-SCSS mixin 名は lowerCamelNotation の名詞句とする。
-
-### SCSS mixin 引数名
-
-SCSS mixin 引数名は lowerCamelNotation の名詞句とする。
-
 ### SCSS 変数名
 
 SCSS 変数名は変数のターゲットとなるレイアウト名もしくはモジュール名と属性名から構成される。
@@ -478,9 +470,12 @@ Attribute Name = Lower Only Name { "-", Lower Only Name }
 }
 ```
 
-### @extends の使用制限
+### @mixin の使用制限
 
-同一モジュール内を除き、@extends を使用してはならない(SHOULD NOT)。
+Compass の提供する @mixin を除き、@mixin を使用してはならない(MUST NOT)。
+@mixin の代わりに @extend を使用する。@extend を使用することで CSS 属性の由来を Web ブラウザーで確認することが可能となり保守が容易となる。
+
+TBD: @mixin の使用を禁止して問題がないか検証。
 
 ### JavaScript にて表示制御を行わない
 
