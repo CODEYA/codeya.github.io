@@ -388,9 +388,9 @@ SCSS ファイル名は原則レイアウト名もしくはモジュール名を
 SCSS File Name = Lower Only Name, { "-", Lower Only Name }
 ```
 
-### SCSS レイアウト用クラスセレクター名
+### SCSS レイアウト用IDセレクター名
 
-レイアウト用クラスセレクター名は UPPER_UNDESCORE_NOTATION の名詞句とする。
+レイアウト用IDセレクター名は UPPER_UNDESCORE_NOTATION の名詞句とする。
 
 ```ebnf
 Layout Class Selector Name = Upper Only Name, { "_", Upper Only Name }
@@ -451,9 +451,9 @@ Attribute Name = Lower Only Name { "-", Lower Only Name }
 <div class="message message--warning"></div>
 ```
 
-### ID セレクターの禁止
+### ID セレクターの使用制限
 
-ID セレクターを使用してはならない(MUST NOT)。
+レイアウトを除き、ID セレクターを使用してはならない(MUST NOT)。
 
 ### 子孫セレクターの使用制限
 
