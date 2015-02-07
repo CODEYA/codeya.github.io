@@ -7,7 +7,7 @@ overview:
 # 概要
 
 本書では Web アプリケーションのフロントエンド開発における規約を定める。
-本書のステータスは Working Draft であり、本書に対するご意見は Pull-request にてお送りいただきたい。
+本書のステータスは Working Draft であり、本書に対するご意見は [Pull-request](https://github.com/CODEYA/codeya.github.io/blob/master/documents/frontend-conventions.md) にてお送りいただきたい。
 
 ## 前提
 
@@ -100,7 +100,9 @@ Lower Only Name = 【regexp】 [a-z]{1}[a-z0-9]*
   <link /><!-- CSS 読み込み -->
 </head>
 <body>
-  <section /><!-- レイアウト -->
+  <article>
+    <section /><!-- レイアウト -->
+  </article>
   <script /><!-- JavaScript 読み込み -->
 </body>
 </html>
@@ -117,7 +119,9 @@ Lower Only Name = 【regexp】 [a-z]{1}[a-z0-9]*
   <link /><!-- CSS 読み込み -->
 </head>
 <body>
-  <section /><!-- レイアウト -->
+  <article>
+    <section /><!-- レイアウト -->
+  </article>
   <script /><!-- JavaScript 読み込み -->
 </body>
 </html>
@@ -134,7 +138,8 @@ html(lang="ja")
     meta(charset="UTF-8")
     link //- CSS 読み込み
   body
-    section //- レイアウト
+    article
+      section //- レイアウト
     script //- JavaScript 読み込み
 {% endhighlight %}</figure>
 
@@ -275,14 +280,14 @@ anchor タグの href 要素にてスキームを指定してはならない(SHO
 本書ではデザインのリソース構成を以下の通り定める。
 
 * ベース
-  * Element のデフォルトスタイルを定義する。また、複数の SCSS にて共通的に使用される変数を定義する。
+  * エレメントのデフォルトスタイルを定義する。また、複数の SCSS にて共通的に使用される変数、@extend を定義する。
   * ベースではIDセレクター、クラスセレクターを使用してはならない。
 * レイアウト
   * UI 全体をセクションに分割するために使用される。ヘッダ、フッタ、コンテンツ等がレイアウトに相当する。
   * レイアウト毎に SCSS ファイルを分割する。
 * モジュール
   * UI として再利用可能なパーツを表す。モジュールに他のモジュールを含んでも構わない。住所入力フォーム、検索用フォームなどがモジュールに相当する。
-  * モジュール毎に SCSS ファイルを分割する。
+  * モジュール毎に SCSS ファイルを分割する。但し、類似のモジュールを同一ファイルにて管理しても構わない。
 * テーマ
   * レイアウト、モジュールにおけるデザインの切り替えを定義する。
   * テーマ毎に SCSS ファイルを分割する。
@@ -375,15 +380,17 @@ TODO コメントはインラインコメント同様の形式を使用し、"TO
 
 ### SCSS ファイル名
 
-SCSS ファイルは lower-hyphen-notation の名詞句とし、".scss" 拡張子を付与する。
+SCSS ファイル名は lower-hyphen-notation の名詞句とし、".scss" 拡張子を付与する。
+SCSS ファイル名は原則レイアウト名もしくはモジュール名を使用するものとする。
+複数のモジュールを同一 SCSS ファイルに格納する場合は内包するモジュールを適切に表す名称とする。
 
 ```ebnf
 SCSS File Name = Lower Only Name, { "-", Lower Only Name }
 ```
 
-### SCSS レイアウト用クラスセレクター名
+### SCSS レイアウト用IDセレクター名
 
-レイアウト用クラスセレクター名は UPPER_UNDESCORE_NOTATION の名詞句とする。
+レイアウト用IDセレクター名は UPPER_UNDESCORE_NOTATION の名詞句とする。
 
 ```ebnf
 Layout Class Selector Name = Upper Only Name, { "_", Upper Only Name }
@@ -413,13 +420,14 @@ State Name = "is-", Lower Only Name
 
 TBD:
 
-### SCSS mixin 名
+### SCSS @extend 名
 
-SCSS mixin 名は lowerCamelNotation の名詞句とする。
+SCSS @extend 名は lower-hyphen-notation の名詞句とする。
+SCSS @extend 名は @extend の表現するデザインを適切に表す名称とする。
 
-### SCSS mixin 引数名
-
-SCSS mixin 引数名は lowerCamelNotation の名詞句とする。
+```ebnf
+SCSS Extend Name = Lower Only Name, { "-", Lower Only Name }
+```
 
 ### SCSS 変数名
 
@@ -435,6 +443,24 @@ Attribute Name = Lower Only Name { "-", Lower Only Name }
 
 ## コーディング規約
 
+### エレメントの利用用途
+
+エレメントは以下の用途で利用するものとする(MUST)。
+
+| エレメント        | 利用用途                   |
+|-----------------|--------------------------|
+| article         | 画面全体(body 直下)        |
+| section         | レイアウト                 |
+| div             | 汎用的なブロックエレメント    |
+| span            | 汎用的なインラインエレメント   |
+| p               | テキストの段落              |
+| a               | ハイパーリンク、ボタン       |
+| ul / ol / li    | 列挙                      |
+| h1, h2, h3      | レイアウトにおけるタイトル    |
+| h4, h5, h6      | モジュールにおけるタイトル    |
+
+TBD: <a> の用途を要確認。
+
 ### マルチクラスによるデザイン管理
 
 単一エレメントに対し、複数クラスの適用を許可する。
@@ -444,17 +470,18 @@ Attribute Name = Lower Only Name { "-", Lower Only Name }
 <div class="message message--warning"></div>
 ```
 
-### ID セレクターの禁止
+### ID セレクターの使用制限
 
-ID セレクターを使用してはならない(MUST NOT)。
+レイアウトを除き、ID セレクターを使用してはならない(MUST NOT)。
+
+### 要素セレクターの使用
+
+モジュール内のエレメントについては要素セレクターを使用してデザインを定義する(SHOULD)。
+必要に応じモジュール内のエレメントにクラスセレクタを適用しても良い。
 
 ### 子孫セレクターの使用制限
 
 同一モジュール内を除き、子孫セレクターを使用してはならない(SHOULD NOT)。
-
-### 要素セレクターの禁止
-
-ベースを除き、要素セレクターを使用してはならない(MUST NOT)。
 
 ### !important の使用制限
 
@@ -471,9 +498,12 @@ ID セレクターを使用してはならない(MUST NOT)。
 }
 ```
 
-### @extends の使用制限
+### @mixin の使用制限
 
-同一モジュール内を除き、@extends を使用してはならない(SHOULD NOT)。
+Compass の提供する @mixin を除き、@mixin を使用してはならない(MUST NOT)。
+@mixin の代わりに @extend を使用する。@extend を使用することで CSS 属性の由来を Web ブラウザーで確認することが可能となり保守が容易となる。
+
+TBD: @mixin の使用を禁止して問題がないか検証。
 
 ### JavaScript にて表示制御を行わない
 
@@ -514,6 +544,10 @@ url() にてスキームを指定してはならない(MUST)。
 ```
 
 TBD: IE での挙動を調査(スキームを指定しない場合リクエストが2回発行されるとの情報アリ)
+
+### レガシーブラウザー対応
+
+レガシーブラウザーには [グレイスフルデグラデーション](http://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement) にて対応を行う。
 
 --------------------------------------------------------------------------------
 # ロジック
