@@ -116,7 +116,7 @@ Pull Request Name = Issue Tracker におけるタスク名。任意の文字種�
 <figure><figcaption>[TIPS] SAKAKI 導入環境</figcaption>{% highlight bash %}
 % g cme
 % g ps origin feature/<Feature ブランチ名>
-% g reqd "<Pull Request Name>"
+% g preqd "<Pull Request Name>"
 {% endhighlight %}</figure>
 </div>
 
