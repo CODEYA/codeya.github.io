@@ -76,6 +76,7 @@ Task Assignee は `feature` ブランチを作成する。
 % git checkout develop
 % git pull
 % git flow feature start <Feature Branch Name>
+% git push origin feature/<Feature Branch Name>
 % git branch --set-upstream-to=origin/feature/<Feature Branch Name> feature/<Feature Branch Name>
 ```
 
@@ -91,6 +92,7 @@ Task Summary = タスクの内容を簡潔に表す文字列。半角英数字�
 % g co develop
 % g pl
 % g ffs <Feature Branch Name>
+% g ps origin feature/<Feature Branch Name>
 % g bup
 {% endhighlight %}</figure>
 </div>
@@ -114,7 +116,7 @@ Pull Request Name = Issue Tracker におけるタスク名。任意の文字種�
 <figure><figcaption>[TIPS] SAKAKI 導入環境</figcaption>{% highlight bash %}
 % g cme
 % g ps origin feature/<Feature ブランチ名>
-% g reqd "<Pull Request Name>"
+% g preqd "<Pull Request Name>"
 {% endhighlight %}</figure>
 </div>
 
