@@ -114,6 +114,12 @@
       $(this).wrapAll($('<div class="tips_sakaki__wrapper"/>'));
       $('<div class="tips_sakaki__title">Sakaki 導入環境</div>').insertBefore($(this));
     });
+    $(".tips_information").each(function() {
+      $(this).wrapAll($('<span class="tips_information__handler"></a>'));
+      $(this).wrapAll($('<span class="tips_information__wrapper"/>'));
+      $('<i class="fa fa-info-circle"></i>').insertBefore($(this).parent());
+      $('<b/>').insertBefore($(this));
+    });
   });
 </script>
 <!-- /TOC -->
