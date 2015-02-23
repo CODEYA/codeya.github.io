@@ -83,13 +83,16 @@ Task Assignee は `feature` ブランチを作成する。
 `feature 起点 feature` ブランチを作成する場合、必ず `Feature Branch Name` に `Parent Task No` を指定するものとする(MUST)。
 `Parent Task No` は起点となった feature ブランチの `Task No` を指定するものとする(MUST)。
 
+何らかの理由により feature ブランチを再作成する場合、オリジナルの `Feature Branch Name` に `Serial No` を付与しユニークとなる様にする(MUST)。
+
 ```ebnf
-Feature Branch Name = Task ID, [ "-", Parent Task No ], "_", Task Summary
+Feature Branch Name = Task ID, [ "-", Parent Task No ], "_", Task Summary, [ "_", Serial No ]
 Task ID = Project ID, "-", Task No
 Parent Task No = Task No
 Project ID = Issue Tracker においてプロジェクトをユニークに識別可能な ID。半角英字。
 Task No = Issue Tracker のプロジェクトにおいてタスクをユニークに識別可能な No。半角数字。
 Task Summary = タスクの内容を簡潔に表す文字列。半角英数字。
+Serial No = 通し番号。ブランチ再作成時のみ指定(2〜)。半角数字。
 ```
 ※ Feature Branch Name には “feature/” 接頭辞は含めない
 
