@@ -70,7 +70,7 @@ Task Owner と Task Assignee 間でタスクの内容について合意する。
 ## 3) feature ブランチ作成
 
 Task Assignee は `feature` ブランチを作成する。
-`feature` ブランチはタスクもしくはサブタスク毎に作成するものとし、必ず `develop` ブランチから派生させるものとする(MUST)。
+`feature` ブランチはタスクもしくはサブタスク毎に作成するものとし、必ず `develop` ブランチを起点とする(`develop 起点 feature`)か、もしくは `feature` ブランチを起点とする(`feature 起点 feature`)ものとする(MUST)。
 
 ```bash
 % git checkout develop
@@ -80,9 +80,15 @@ Task Assignee は `feature` ブランチを作成する。
 % git branch --set-upstream-to=origin/feature/<Feature Branch Name> feature/<Feature Branch Name>
 ```
 
+`feature 起点 feature` ブランチを作成する場合、必ず `Feature Branch Name` に `Parent Task No` を指定するものとする(MUST)。
+`Parent Task No` は起点となった feature ブランチの `Task No` を指定するものとする(MUST)。
+
 ```ebnf
-Feature Branch Name = Task ID, "_", Task Summary
-Task ID = Issue Tracker においてタスクをユニークに識別可能な ID。半角英数記号。
+Feature Branch Name = Task ID, [ "-", Parent Task No ], "_", Task Summary
+Task ID = Project ID, "-", Task No
+Parent Task No = Task No
+Project ID = Issue Tracker においてプロジェクトをユニークに識別可能な ID。半角英字。
+Task No = Issue Tracker のプロジェクトにおいてタスクをユニークに識別可能な No。半角数字。
 Task Summary = タスクの内容を簡潔に表す文字列。半角英数字。
 ```
 ※ Feature Branch Name には “feature/” 接頭辞は含めない
@@ -139,7 +145,7 @@ commit は以下に留意して作成すること。
 ```
 
 ```ebnf
-Commit Message = Commit Category, [ " : ", Commit Summary ], [ "\n", Commit Detail ]
+Commit Message = Task ID, ":", Commit Category, [ " : ", Commit Summary ], [ "\n", Commit Detail ]
 Commit Category = "FEATURE" | "FIX" | "FORMAT" | "REFACTORING" | "WIP" | "EMPTY" | "MISC"
 Commit Summary = コミットの内容を一文で表す。Commit Category "WIP" / "EMPTY" 以外では必須。
 Commit Detail = コミットの詳細を自然言語で表す。複数行になっても良い。
@@ -176,6 +182,7 @@ commit は 「タスク作業」に記載の Commit Category、Commit Summary �
 ```
 
 Task Assignee は commit 整理完了後に origin/develop に対し feature ブランチを rebase しなければならない(MUST)。
+`feature 起点 feature` の場合、Task Assignee は起点となった `feature` ブランチが `develop` ブランチにマージされていることを確認した後に rebase するものとする(MUST)。
 rebase の際、"EMPTY" commit は自動的に削除される。
 
 ```bash
@@ -205,10 +212,15 @@ TBD: レビュー観点を記載
 
 レビューの結果、レビューフィードバックがある場合は pull request に記載し Task Assignee に Issue Tracker にてタスクを差し戻す。
 
+### feature 起点 feature ブランチの場合
+
+* ブランチ名に `Parent Task No` が含まれている場合は起点となる feature ブランチが先に処理されていることを確認する(MUST)。
+* commit に他ブランチの `Task ID` を持つものが含まれていないことを確認する(MUST)。
+
 ## 9) feature ブランチマージ、削除
 
 Task Owner はレビューを完了し、レビューフィードバックが全て解消された pull request を origin/develop にマージする。
-マージにてコンフリクトが発生した場合、Task Assignee に rebase を依頼する。
+マージにてコンフリクトが発生した場合、Task Assignee に rebase を依頼する(SHOULD)。
 
 引き続き origin/develop にマージされた feature ブランチ(origin/feature)を削除する。
 Task Owner は Task Assignee に Issue Tracker にてレビュー完了を通知する。
