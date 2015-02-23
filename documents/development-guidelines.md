@@ -87,14 +87,14 @@ Task Summary = タスクの内容を簡潔に表す文字列。半角英数字�
 ```
 ※ Feature Branch Name には “feature/” 接頭辞は含めない
 
-<div style="border:1px solid #ccc; padding:1em; margin:1em 0; background-color:#f9f9f9;">
-<figure><figcaption>[TIPS] SAKAKI 導入環境</figcaption>{% highlight bash %}
+<div class="tips_sakaki">
+{% highlight bash %}
 % g co develop
 % g pl
 % g ffs <Feature Branch Name>
 % g ps origin feature/<Feature Branch Name>
 % g bup
-{% endhighlight %}</figure>
+{% endhighlight %}
 </div>
 
 ## 4) pull request 作成
@@ -112,12 +112,12 @@ Task Assignee はタスク作業に先立って pull request を作成する(SHO
 Pull Request Name = Issue Tracker におけるタスク名。任意の文字種を利用可能。
 ```
 
-<div style="border:1px solid #ccc; padding:1em; margin:1em 0; background-color:#f9f9f9;">
-<figure><figcaption>[TIPS] SAKAKI 導入環境</figcaption>{% highlight bash %}
+<div class="tips_sakaki">
+{% highlight bash %}
 % g cme
 % g ps origin feature/<Feature ブランチ名>
 % g preqd "<Pull Request Name>"
-{% endhighlight %}</figure>
+{% endhighlight %}
 </div>
 
 ## 5) タスク作業
@@ -157,11 +157,11 @@ Commit Category は以下の通り定義する。
 | EMPTY           | 空のコミットを示す。 pull request 作成のために --allow-empty にてコミットを作成する場合に使用する。 | 対象外          |
 | MISC            | 上記以外の変更を示す。                                                                    | 作業内容により判断 |
 
-<div style="border:1px solid #ccc; padding:1em; margin:1em 0; background-color:#f9f9f9;">
-<figure><figcaption>[TIPS] SAKAKI 導入環境</figcaption>{% highlight bash %}
+<div class="tips_sakaki">
+{% highlight bash %}
 % g aa
 % g cm “<Commit Message>”
-{% endhighlight %}</figure>
+{% endhighlight %}
 </div>
 
 ## 6) commit整理、rebase
@@ -190,10 +190,10 @@ Task Assignee は feature ブランチを push し、Task Owner に Issue Tracke
 % git push origin feature/<Feature Branch Name>
 ```
 
-<div style="border:1px solid #ccc; padding:1em; margin:1em 0; background-color:#f9f9f9;">
-<figure><figcaption>[TIPS] SAKAKI 導入環境</figcaption>{% highlight bash %}
+<div class="tips_sakaki">
+{% highlight bash %}
 % g ps origin “<Commit Message>”
-{% endhighlight %}</figure>
+{% endhighlight %}
 </div>
 
 ## 8) レビュー

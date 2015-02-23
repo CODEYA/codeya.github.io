@@ -20,6 +20,9 @@
   <!-- TOC -->
   <link rel="stylesheet" href="../common-files/css/toc.css">
   <!-- /TOC -->
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- /FONT AWESOME -->
 </head>
 <body>
   <div class="page-wrapper">
@@ -106,6 +109,10 @@
       'selectors': 'h1,h2',
       'container': '.documents > .container > .content',
       'smoothScrolling': true
+    });
+    $(".tips_sakaki").each(function() {
+      $(this).wrapAll($('<div class="tips_sakaki__wrapper"/>'));
+      $('<div class="tips_sakaki__title">Sakaki 導入環境</div>').insertBefore($(this));
     });
   });
 </script>

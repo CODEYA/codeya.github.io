@@ -754,6 +754,7 @@ section * {
   width: auto;
   border-spacing: 0;
   font-size:14px;
+  margin: 0.5em 0;
 }
 .documents table th {
   color: #fff;
@@ -818,4 +819,23 @@ section * {
 }
 .documents hr {
   margin: 50px 0;
+}
+
+/*** tips_sakaki ******************************************/
+.tips_sakaki__wrapper {
+  border:1px solid #882255;
+  font-weight: normal;
+}
+.tips_sakaki {
+  padding: 0.1em 1em;
+}
+.tips_sakaki__title {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 0.3em 1em;
+  color: #882255;
+  background-color: #FCF1F6;
+  border-bottom:1px solid #882255;
+  margin-bottom: 0.5em;
 }
