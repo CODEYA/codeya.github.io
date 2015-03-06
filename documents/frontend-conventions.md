@@ -749,3 +749,17 @@ Array<type>
 // BAD
 type[]
 ```
+
+### TypeScript の Accessor の禁止
+
+TypeScript の Accessor は使用してはならない(MUST NOT)。
+
+```javascript
+// GOOD
+getName():string {...}
+setName(name:string) {...}
+
+// BAD
+get name():string {...}
+set name(name:string) {...}
+```
