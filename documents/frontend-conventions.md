@@ -205,6 +205,14 @@ Jade 変数名は lowerCamelNotation の名詞句とする。
 Jade Variable Name = Lower Name
 ```
 
+### HTMLタグ ID 属性
+
+HTMLタグ ID 属性は UPPER_UNDESCORE_NOTATION の名詞句とする。
+
+```ebnf
+HTML Tag ID = Upper Only Name, { "_", Upper Only Name }
+```
+
 ## コーディング規約
 
 ### Class の記載
@@ -388,14 +396,6 @@ SCSS ファイル名は原則レイアウト名もしくはモジュール名を
 SCSS File Name = Lower Only Name, { "-", Lower Only Name }
 ```
 
-### SCSS レイアウト用IDセレクター名
-
-レイアウト用IDセレクター名は UPPER_UNDESCORE_NOTATION の名詞句とする。
-
-```ebnf
-Layout Class Selector Name = Upper Only Name, { "_", Upper Only Name }
-```
-
 ### SCSS モジュール用クラスセレクター名
 
 モジュール用クラスセレクター名はモジュール名、エレメント名、モディファイヤー名から構成される。
@@ -472,7 +472,7 @@ TBD: <a> の用途を要確認。
 
 ### ID セレクターの使用制限
 
-レイアウトを除き、ID セレクターを使用してはならない(MUST NOT)。
+ID セレクターを使用してはならない(MUST NOT)。
 
 ### 要素セレクターの使用
 
