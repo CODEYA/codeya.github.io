@@ -205,6 +205,34 @@ Jade 変数名は lowerCamelNotation の名詞句とする。
 Jade Variable Name = Lower Name
 ```
 
+### HTML エレメントの利用用途
+
+HTML エレメントは以下の用途で利用するものとする(MUST)。
+
+| エレメント        | 利用用途                         |
+|-----------------|--------------------------------|
+| section         | レイアウト                       |
+| article         | モジュール                       |
+| div             | 汎用的なブロックエレメント           |
+| span            | 汎用的なインラインエレメント         |
+| p               | テキストの段落                    |
+| a               | ハイパーリンク、ボタン              |
+| ul / ol / li    | 列挙                            |
+| head            | レイアウト、モジュールにおけるヘッダ   |
+| foot            | レイアウト、モジュールにおけるタイトル |
+| h1, h2, h3      | レイアウトにおけるタイトル           |
+| h4, h5, h6      | モジュールにおけるタイトル           |
+
+TBD: <a> の用途を要確認。
+
+### HTMLエレメント ID 属性
+
+HTMLエレメント ID 属性は UPPER_UNDESCORE_NOTATION の名詞句とする。
+
+```ebnf
+HTML Tag ID = Upper Only Name, { "_", Upper Only Name }
+```
+
 ## コーディング規約
 
 ### Class の記載
@@ -388,14 +416,6 @@ SCSS ファイル名は原則レイアウト名もしくはモジュール名を
 SCSS File Name = Lower Only Name, { "-", Lower Only Name }
 ```
 
-### SCSS レイアウト用IDセレクター名
-
-レイアウト用IDセレクター名は UPPER_UNDESCORE_NOTATION の名詞句とする。
-
-```ebnf
-Layout Class Selector Name = Upper Only Name, { "_", Upper Only Name }
-```
-
 ### SCSS モジュール用クラスセレクター名
 
 モジュール用クラスセレクター名はモジュール名、エレメント名、モディファイヤー名から構成される。
@@ -443,24 +463,6 @@ Attribute Name = Lower Only Name { "-", Lower Only Name }
 
 ## コーディング規約
 
-### エレメントの利用用途
-
-エレメントは以下の用途で利用するものとする(MUST)。
-
-| エレメント        | 利用用途                   |
-|-----------------|--------------------------|
-| article         | 画面全体(body 直下)        |
-| section         | レイアウト                 |
-| div             | 汎用的なブロックエレメント    |
-| span            | 汎用的なインラインエレメント   |
-| p               | テキストの段落              |
-| a               | ハイパーリンク、ボタン       |
-| ul / ol / li    | 列挙                      |
-| h1, h2, h3      | レイアウトにおけるタイトル    |
-| h4, h5, h6      | モジュールにおけるタイトル    |
-
-TBD: <a> の用途を要確認。
-
 ### マルチクラスによるデザイン管理
 
 単一エレメントに対し、複数クラスの適用を許可する。
@@ -472,7 +474,7 @@ TBD: <a> の用途を要確認。
 
 ### ID セレクターの使用制限
 
-レイアウトを除き、ID セレクターを使用してはならない(MUST NOT)。
+ID セレクターを使用してはならない(MUST NOT)。
 
 ### 要素セレクターの使用
 
@@ -749,3 +751,26 @@ Array<type>
 // BAD
 type[]
 ```
+
+### TypeScript の Accessor の禁止
+
+TypeScript の Accessor は使用してはならない(MUST NOT)。
+
+```javascript
+// GOOD
+getName():string {...}
+setName(name:string) {...}
+
+// BAD
+get name():string {...}
+set name(name:string) {...}
+```
+
+### セレクターの利用方針
+
+セレクターは以下のいずれかに従って利用する(MUST)。
+
+* ID セレクターを使用する
+* ID セレクターを親、要素セレクターを子または子孫として使用する。
+* レイアウトまたはモジュールを特定可能なクラスセレクターを使用する。
+* レイアウトまたはモジュールを特定可能なクラスセレクターを親、要素セレクターを子または子孫として使用する。
