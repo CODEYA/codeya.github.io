@@ -54,6 +54,10 @@ gulp.task('default', function() {});
 [13:49:57] Finished 'default' after 39 μs
 ```
 
+## Completion の設定
+
+[Completion for gulp](https://github.com/gulpjs/gulp/tree/master/completion) に従い設定を行う。
+
 ## gulp のアップデート
 
 gulp を最新にアップデートする方法を以下に示す。
@@ -648,3 +652,55 @@ fs により相対パスを絶対パスに変換することができる。
 ```javascript
 var srcRealPath = fs.realpathSync('src');
 ```
+
+
+
+
+
+# gulpfile.js のデバッグ
+
+[node-inspector](https://github.com/node-inspector/node-inspector) により gulpfile.js のデバッグを行うことができる。
+
+## node-inspector のインストール
+
+```bash
+% npm install --global node-inspector
+```
+
+## gulpinspector.js の作成
+
+node から gulp を呼び出すためのラッパー(ここでは gulpinspector.js とする)を作成する。
+
+```JavaScript
+var task = process.argv.length > 2 ? process.argv[2] : "default";
+require('./gulpfile.js');
+require('gulp').start(task);
+```
+
+以下のように gulpinspector.js の動作を確認する。
+それぞれ、'default' タスクおよび指定したタスクが正常に動作することを確認する。
+
+```bash
+% node ./gulpinspector.js
+% node ./gulpinspector.js mytask
+```
+
+## デバッグ
+
+ターミナルを 2 つ用意し、それぞれ以下のコマンドを実行する。
+
+```bash
+% node --debug-brk ./gulpinspector.js mytask
+debugger listening on port 5858
+```
+
+```bash
+% node-inspector --web-port=8090
+Node Inspector v0.12.2
+Visit http://127.0.0.1:8090/?ws=127.0.0.1:8090&port=5858 to start debugging.
+```
+
+node-inspector が起動したら Web ブラウザーで "http://127.0.0.1:8090/?ws=127.0.0.1:8090&port=5858" を開く。
+先頭行にブレイクポイントが設定され処理が停止した状態となっているので、適宜ブレイクポイントの設定やステップ実行などを行いデバッグする。
+
+![node-inspector 画面サンプル](./gulp-cookbook/gulpinspector-sample.png)
