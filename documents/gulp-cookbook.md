@@ -79,6 +79,37 @@ gulp を最新にアップデートする方法を以下に示す。
 
 
 
+# gulp の実行
+
+## gulp の実行
+
+gulp にタスク名を指定して起動すると指定したタスクが実行される。
+この場合、gulpfile.js はカレントディレクトリーに存在するものが使用される。
+
+```bash
+% gulp mytask
+```
+
+タスク名を指定しない場合は 'default' タスクが実行される。
+
+```bash
+% gulp
+```
+
+## 任意の gulpfile.js による gulp の実行
+
+`--gulpfile` 引数を使用することで任意の gulpfile.js を使用して gulp を実行することができる。
+カレントディレクトリーにない gulpfile.js を指定した場合は `--cwd` 引数を併せて指定しなければならないケースがある。
+
+```bash
+% gulp --gulpfile ./gulp/mytask.js --cwd . mytask
+```
+
+
+
+
+
+
 # タスク定義
 
 ## タスクの定義
