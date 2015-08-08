@@ -54,6 +54,10 @@ gulp.task('default', function() {});
 [13:49:57] Finished 'default' after 39 μs
 ```
 
+## Completion の設定
+
+[Completion for gulp](https://github.com/gulpjs/gulp/tree/master/completion) に従い設定を行う。
+
 ## gulp のアップデート
 
 gulp を最新にアップデートする方法を以下に示す。
