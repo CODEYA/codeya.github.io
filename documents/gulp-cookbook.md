@@ -583,6 +583,24 @@ var run = require('gulp-run');
 run('ls').exec();
 ```
 
+## [gulp-mode](https://www.npmjs.com/package/gulp-mode)
+
+gulp-mode によりビルドモード(production/development)の切替ができる。
+
+```javascript
+var gulp = require('gulp');
+var mode = require('gulp-mode')();
+
+gulp.src(...)
+    .pipe(mode.production(...))
+    .pipe(mode.development(...))
+    .pipe(gulp.dest(...));
+```
+
+```bash
+% gulp --production
+```
+
 
 
 
