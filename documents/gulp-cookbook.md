@@ -402,7 +402,6 @@ gulp-async-tasks により並列処理用のタスク定義を自動的に作成
 
 ```JavaScript
 var gulp = require('gulp-async-tasks')(require('gulp'));
-var seq = require('run-sequence');
 
 gulp.task('taskA', function() {
   return gulp.src(...).pipe(...);
