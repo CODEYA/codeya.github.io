@@ -425,7 +425,7 @@ gulp.task('taskB', function() {
   gulp.src(...).pipe(...);
 });
 gulp.task('watch', function() {
-  gulp.watch(`src/**/*`).on('change', function() {
+  gulp.watch('src/**/*').on('change', function() {
     seq('taskA', 'taskB');
   });
 }
