@@ -313,7 +313,7 @@ gulp.task('build', function() {
 gulp ではタスクやストリームは基本的に並列処理されるため、gulpfile.js のコードと実際の処理順序は異なるケースが発生する。
 本章ではタスクやストリームについて逐次/並列処理の制御方法を紹介する。
 
-## 依存タスクの並列処理
+## タスクの並列処理
 
 以下の例では `gulp taskB` を実行した際、taskA と taskB が並列処理される。
 
@@ -329,7 +329,7 @@ gulp.task('taskB', ['taskA'], function() {
 });
 ```
 
-## 依存タスクの逐次処理
+## タスクの逐次処理
 
 以下の例では `gulp taskB` を実行した際、taskA と taskB が逐次処理される。
 taskA がストリームを返すことで taskA の完了を待った後で taskB が処理されるようになる。
@@ -339,6 +339,24 @@ var gulp = require('gulp');
 
 gulp.task('taskA', function() {
   return gulp.src(...).pipe(...);
+});
+
+gulp.task('taskB', ['taskA'], function() {
+  gulp.src(...).pipe(...);
+});
+```
+
+先に実行されるタスクが複数のストリームを処理する場合、[merge-stream](https://www.npmjs.com/package/merge-stream) を使用してマージしたストリームを返さなければならない。
+なお、gulp-util でもストリームをマージする combine 機能が提供されるが、combine では逐次処理とならないため注意が必要。
+
+```javascript
+var merge = require('merge-stream');
+
+gulp.task('taskA', function() {
+  return merge(
+    gulp.src(...).pipe(...),
+    gulp.src(...).pipe(...)
+  );
 });
 
 gulp.task('taskB', ['taskA'], function() {
@@ -373,6 +391,45 @@ gulp.task('taskB', function(cb) {
 gulp.task('taskC', function(cb) {
   gulp.src(...).pipe(...);
 });
+```
+
+## [gulp-async-tasks](https://www.npmjs.com/package/gulp-async-tasks) による並列処理用タスクの自動生成
+
+gulp-async-tasks により並列処理用のタスク定義を自動的に作成することができる。
+タスク定義は全て逐次処理用(ストリームを返すタスク)としておき、gulp-async-tasks により並列処理用タスク(ストリームを返さないタスク)を自動生成することでタスク定義の肥大化を防ぎつつ柔軟な逐次/並列処理の制御が可能となる。
+
+以下の例では taskA と taskB は逐次処理、taskA と taskC は並列処理となる。
+
+```JavaScript
+var gulp = require('gulp-async-tasks')(require('gulp'));
+var seq = require('run-sequence');
+
+gulp.task('taskA', function() {
+  return gulp.src(...).pipe(...);
+});
+gulp.task('taskB', ['taskA']);
+gulp.task('taskC', ['taskA:async']);
+```
+
+## watch によるファイル更新検出時のタスクの逐次処理
+
+watch により複数のタスクを逐次処理にて実行したい場合は以下のように `change` イベントと run-sequence を使用する。
+
+```JavaScript
+var gulp = require('gulp');
+var seq = require('run-sequence');
+
+gulp.task('taskA', function() {
+  return gulp.src(...).pipe(...);
+});
+gulp.task('taskB', function() {
+  gulp.src(...).pipe(...);
+});
+gulp.task('watch', function() {
+  gulp.watch(`src/**/*`).on('change', function() {
+    seq('taskA', 'taskB');
+  });
+}
 ```
 
 ## ストリームの並列処理
@@ -476,21 +533,6 @@ gulp-util の `colors` によりログメッセージにカラーを付けるこ
 var gutil = require('gulp-util');
 
 gutil.log(gutil.colors.red('Hello, gulp!'));
-```
-
-### ストリームのマージ
-
-gulp-util の `combine` により複数のストリームをマージすることができる。
-
-```javascript
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-
-gutil.combine(
-  gulp.src(...).pipe(...).pipe(gulp.dest(...)),
-  gulp.src(...).pipe(...).pipe(gulp.dest(...)),
-  gulp.src(...).pipe(...).pipe(gulp.dest(...))
-);
 ```
 
 ### CLI オプションの参照
