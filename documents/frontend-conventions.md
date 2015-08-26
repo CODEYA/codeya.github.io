@@ -230,7 +230,7 @@ TBD: <a> の用途を要確認。
 HTMLエレメント ID 属性は UPPER_UNDESCORE_NOTATION の名詞句とする。
 
 ```ebnf
-HTML Tag ID = Upper Only Name, { "_", Upper Only Name }
+HTML Tag ID = Upper Only Name, { "-", Upper Only Name }
 ```
 
 ## コーディング規約
