@@ -596,7 +596,7 @@ var notify = require('gulp-notify');
 
 gulp.src(...)
     .pipe(gulp.dest(...))
-    .pipe(notify('This is notification message'));
+    .pipe(notify({ message:'This is notification message', onLast:true }));
 ```
 
 ![gulp-notify の OS X における通知例](./gulp-cookbook/gulp-notify-sample.png)
