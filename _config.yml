@@ -4,7 +4,7 @@ markdown_ext: "md"
 
 # Conversion
 markdown:    redcarpet
-highlighter: pygments
+highlighter: rouge
 
 # Outputting
 defaults:
