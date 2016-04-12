@@ -19,6 +19,14 @@ overview:
   </dl></div></a>
 </div>
 
+<div style="display:table;float:left;margin-right:20px;margin-bottom:20px;margin-bottom:20px;border:1px solid #666;padding:10px;border-radius:10px;box-shadow:5px 5px 3px 0px #eee;">
+  <a href="http://www.amazon.co.jp/dp/4048860690" style="display:table-row;"><img src="http://images-jp.amazon.com/images/P/4048860690.09.MZZZZZZZ.jpg" style="display:table-cell;"/>
+  <div style="display:table-cell;vertical-align:middle;padding-left:10px;"><dl>
+    <dt>Author</dt><dd>Robert C. Martin</dd>
+    <dt>Title</dt><dd>Clean Coder</dd>
+  </dl></div></a>
+</div>
+
 <div style="display:table;float:left;margin-right:20px;margin-bottom:20px;border:1px solid #666;padding:10px;border-radius:10px;box-shadow:5px 5px 3px 0px #eee;">
   <a href="http://www.amazon.co.jp/dp/4274066304" style="display:table-row;"><img src="http://images-jp.amazon.com/images/P/4274066304.09.MZZZZZZZ.jpg" style="display:table-cell;"/>
   <div style="display:table-cell;vertical-align:middle;padding-left:10px;"><dl>
@@ -158,6 +166,14 @@ overview:
 </div>
 
 <div style="display:table;float:left;margin-right:20px;margin-bottom:20px;border:1px solid #666;padding:10px;border-radius:10px;box-shadow:5px 5px 3px 0px #eee;">
+  <a href="http://www.amazon.co.jp/dp/4844337769" style="display:table-row;"><img src="http://images-jp.amazon.com/images/P/4844337769.09.MZZZZZZZ.jpg" style="display:table-cell;"/>
+  <div style="display:table-cell;vertical-align:middle;padding-left:10px;"><dl>
+    <dt>Author</dt><dd>Paul Chiusano、Rúnar Bjarnason</dd>
+    <dt>Title</dt><dd>Scala関数型デザイン&プログラミング</dd>
+  </dl></div></a>
+</div>
+
+<div style="display:table;float:left;margin-right:20px;margin-bottom:20px;border:1px solid #666;padding:10px;border-radius:10px;box-shadow:5px 5px 3px 0px #eee;">
   <a href="http://www.amazon.co.jp/dp/4781911609" style="display:table-row;"><img src="http://images-jp.amazon.com/images/P/4781911609.09.MZZZZZZZ.jpg" style="display:table-cell;"/>
   <div style="display:table-cell;vertical-align:middle;padding-left:10px;"><dl>
     <dt>Author</dt><dd>浅井健一</dd>
@@ -211,6 +227,14 @@ overview:
     <dt>Author</dt><dd>徳丸浩</dd>
     <dt>Title</dt><dd>安全なWebアプリケーションの作り方</dd>
     <dt>Note</dt><dd>通称『徳丸本』</dd>
+  </dl></div></a>
+</div>
+
+<div style="display:table;float:left;margin-right:20px;margin-bottom:20px;border:1px solid #666;padding:10px;border-radius:10px;box-shadow:5px 5px 3px 0px #eee;">
+  <a href="http://www.amazon.co.jp/dp/4797382228" style="display:table-row;"><img src="http://images-jp.amazon.com/images/P/4797382228.09.MZZZZZZZ.jpg" style="display:table-cell;"/>
+  <div style="display:table-cell;vertical-align:middle;padding-left:10px;"><dl>
+    <dt>Author</dt><dd>結城浩</dd>
+    <dt>Title</dt><dd>暗号技術入門</dd>
   </dl></div></a>
 </div>
 
