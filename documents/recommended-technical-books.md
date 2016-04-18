@@ -314,6 +314,14 @@ overview:
   </dl></div></a>
 </div>
 
+<div style="display:table;float:left;margin-right:20px;margin-bottom:20px;border:1px solid #666;padding:10px;border-radius:10px;box-shadow:5px 5px 3px 0px #eee;">
+  <a href="http://www.amazon.co.jp/dp/B00I8AT1BS" style="display:table-row;"><img src="http://images-jp.amazon.com/images/P/B00I8AT1BS.09.MZZZZZZZ.jpg" style="display:table-cell;"/>
+  <div style="display:table-cell;vertical-align:middle;padding-left:10px;"><dl>
+    <dt>Author</dt><dd>結城 浩</dd>
+    <dt>Title</dt><dd>Java言語で学ぶデザインパターン入門 マルチスレッド編</dd>
+  </dl></div></a>
+</div>
+
 <div style="clear:both" ></div>
 
 # JavaScript
@@ -423,4 +431,3 @@ overview:
     <dt>Title</dt><dd>ロジカル・シンキング</dd>
   </dl></div></a>
 </div>
-
